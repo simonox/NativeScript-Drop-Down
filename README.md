@@ -9,6 +9,7 @@ This only happens if you are using RadListView. It is not happening if you are u
 ## Steps to reproduce
 
 ```
+cd demo-ng
 npm install
 tns install
 tns run ios --emulator
