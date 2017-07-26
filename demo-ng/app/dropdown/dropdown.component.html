@@ -1,30 +1,31 @@
 <ActionBar title="NG Demo"></ActionBar>
-<StackLayout>
-    <GridLayout rows="auto, auto, auto, *"
-                columns="auto, *">
-        <DropDown #dd
-                  [class]="cssClass"
-                  [items]="items"
-                  [(ngModel)]="selectedIndex"
-                  [hint]="hint"
-                  (selectedIndexChanged)="onchange($event)"
-                  (opened)="onopen()"
-                  (closed)="onclose()"
-                  row="0"
-                  colSpan="2"></DropDown>
-        <Label text="Selected Index:"
-               row="1"
-               col="0"
-               fontSize="18"
-               verticalAlignment="bottom"></Label>
-        <TextField [text]="selectedIndex"
-                   row="1"
-                   col="1"></TextField>
-        <Button row="2"
-                col="0"
-                colSpan="2"
-                (tap)="changeStyles()"
-                text="Change Styles"
-                style="font-size: 25"></Button>
-    </GridLayout>
-</StackLayout>
+<GridLayout rows="*" width="100%" height="100%">
+    <RadListView row="1" [items]="cartItems"
+                 pullToRefresh="false"
+                 selectionBehavior="Press"
+                 #cartView>
+        <ng-template let-item="item" >
+            <StackLayout orientation="vertical" class="medium-spacing tile">
+                <Label [text]="item.label"></Label>
+                <DropDown #dd
+                          [class]="cssClass"
+                          [items]="selectableItems"
+                          [(ngModel)]="item.value"
+                          [hint]="hint"
+                          (selectedIndexChanged)="onchange($event)"
+                          (opened)="onopen()"
+                          (closed)="onclose()"
+                          row="0"
+                          colSpan="2"></DropDown>
+                <Label text="Selected Index:"
+                       row="1"
+                       col="0"
+                       fontSize="18"
+                       verticalAlignment="bottom"></Label>
+                <TextField [text]="item.value"
+                           row="1"
+                           col="1"></TextField>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>

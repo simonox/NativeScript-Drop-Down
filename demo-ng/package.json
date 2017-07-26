@@ -13,28 +13,31 @@
     }
   },
   "scripts": {
-    "android": "npm uninstall nativescript-drop-down && tns platform remove android && tns platform add android@rc && tns run android",
-    "ios": "npm uninstall nativescript-drop-down && tns run ios --emulator",
-    "debug-ios": "npm uninstall nativescript-drop-down && tns debug ios --emulator"
+    "android": "tns run android",
+    "ios": "tns run ios --emulator",
+    "debug-ios": "tns debug ios --emulator"
   },
   "dependencies": {
-    "@angular/animations": "^4.0.3",
-    "@angular/common": "^4.0.3",
-    "@angular/compiler": "^4.0.3",
-    "@angular/core": "^4.0.3",
-    "@angular/forms": "^4.0.3",
-    "@angular/http": "^4.0.3",
-    "@angular/platform-browser": "^4.0.3",
-    "@angular/platform-browser-dynamic": "^4.0.3",
-    "@angular/router": "^4.0.3",
-    "nativescript-angular": "3.0.0",
-    "nativescript-drop-down": "file:../bin/dist",
+    "@angular/animations": "4.0.1",
+    "@angular/common": "4.0.1",
+    "@angular/compiler": "4.0.1",
+    "@angular/core": "4.0.1",
+    "@angular/forms": "4.0.1",
+    "@angular/http": "4.0.1",
+    "@angular/platform-browser": "4.0.1",
+    "@angular/platform-browser-dynamic": "4.0.1",
+    "@angular/router": "4.0.1",
+    "@angular/upgrade": "4.0.1",
+    "nativescript-angular": "~3.1.0",
+    "nativescript-drop-down": "^3.1.0",
+    "nativescript-telerik-ui": "3.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.2.0",
-    "tns-core-modules": "3.0.1",
-    "zone.js": "~0.8.2"
+    "tns-core-modules": "^3.1.0",
+    "zone.js": "~0.8.5"
   },
   "devDependencies": {
+    "nativescript": "^3.1.2",
     "babel-traverse": "6.24.1",
     "babel-types": "6.24.1",
     "babylon": "6.17.0",

@@ -9,13 +9,22 @@ import { SelectedIndexChangedEventData, ValueList } from "nativescript-drop-down
 export class DropDownComponent implements OnInit {
     public selectedIndex: number = null;
     public hint                  = "My Hint";
-    public items: ValueList<string>;
+    public selectableItems: ValueList<string>;
     public cssClass: string      = "default";
+    public cartItems = [
+        {
+            label: 'shoppingCartItem1',
+            value: null
+        }, {
+            label: 'shoppingCartItem2',
+            value: null
+        }
+    ];
 
     public ngOnInit() {
-        this.items = new ValueList<string>();
+        this.selectableItems = new ValueList<string>();
         for ( let loop = 0; loop < 200; loop++ ) {
-            this.items.push({
+            this.selectableItems.push({
                 value:   `I${loop}`,
                 display: `Item ${loop}`,
             });
@@ -23,7 +32,7 @@ export class DropDownComponent implements OnInit {
     }
 
     public onchange(args: SelectedIndexChangedEventData) {
-        console.log(`Drop Down selected index changed from ${args.oldIndex} to ${args.newIndex}. New value is "${this.items.getValue(
+        console.log(`Drop Down selected index changed from ${args.oldIndex} to ${args.newIndex}. New value is "${this.selectableItems.getValue(
             args.newIndex)}"`);
     }
 
